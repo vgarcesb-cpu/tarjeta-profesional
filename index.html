@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Víctor Garcés Borje | Profesional Técnico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: #e5e7eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    max-width: 900px;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.header span {
+    color: #38bdf8;
+    font-size: 16px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.section h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #94a3b8;
+    margin-bottom: 16px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.item img {
+    width: 64px;
+    background: #020617;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+}
+
+.item p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.highlight {
+    color: #38bdf8;
+}
+
+.data p {
+    margin: 8px 0;
+}
+
+.actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #020617;
+    background: #38bdf8;
+}
+
+.btn.mail {
+    background: #e5e7eb;
+}
+
+.btn.whatsapp {
+    background: #22c55e;
+    color: #022c22;
+}
+
+.qr-block {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.qr-block img {
+    width: 120px;
+    background: #ffffff;
+    padding: 6px;
+    border-radius: 12px;
+}
+
+.qr-text {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-bottom: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="header">
+        <h1>Víctor Garcés Borje</h1>
+        <span>Ingeniero autodidacta · Energía · Gas · Mantenimiento</span>
+    </div>
+
+    <div class="grid">
+
+        <div class="section">
+            <h2>Certificaciones</h2>
+
+            <div class="item">
+                <img src="logo-minsal.png">
+                <p>Operador de Caldera<br><span class="highlight">MINSAL</span></p>
+            </div>
+
+            <div class="item">
+                <img src="logo-minenergia.png">
+                <p>Gestor Energético<br><span class="highlight">Ministerio de Energía</span></p>
+            </div>
+
+            <div class="item">
+                <img src="logo-sec.png">
+                <p>Instalador de Gas Clase 3<br><span class="highlight">SEC</span></p>
+            </div>
+
+            <div class="item">
+                <img src="logo-finning.png">
+                <p>Mecánico de Mantenimiento<br><span class="highlight">CAT · Finning Chile</span></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Contacto</h2>
+
+            <div class="data">
+                <p><strong>RUT:</strong> 10.582.008-9</p>
+                <p><strong>Email:</strong> vgarcesb@gmail.com</p>
+                <p><strong>Móvil:</strong> +56 9 3407 2459</p>
+            </div>
+
+            <div class="actions">
+                <a href="tel:+56934072459" class="btn">📞 Llamar</a>
+                <a href="mailto:vgarcesb@gmail.com" class="btn mail">✉️ Email</a>
+                <a href="https://wa.me/56934072459" class="btn whatsapp">💬 WhatsApp</a>
+            </div>
+
+            <div class="qr-block">
+                <p class="qr-text">Escanéame para contacto directo</p>
+                <img src="qr-victor-garces.png">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
