@@ -1,16 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>Víctor Garcés Borje | Profesional Técnico</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="description" content="Víctor Garcés Borje — Operador de Caldera, Gestor Energético, Instalador de Gas Clase 3">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
+* { box-sizing: border-box; }
+
 body {
     margin: 0;
-    padding: 0;
+    padding: 20px;
     font-family: 'Inter', sans-serif;
     background: linear-gradient(135deg, #0f172a, #020617);
     color: #e5e7eb;
@@ -27,67 +31,106 @@ body {
     border-radius: 16px;
     padding: 32px;
     box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+    border: 1px solid #1e293b;
+}
+
+.header {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #1e293b;
 }
 
 .header h1 {
-    margin: 0;
-    font-size: 32px;
+    margin: 0 0 6px 0;
+    font-size: 28px;
     font-weight: 700;
 }
 
 .header span {
     color: #38bdf8;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
-    margin-top: 32px;
+    margin-top: 28px;
 }
 
 .section h2 {
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    color: #94a3b8;
-    margin-bottom: 16px;
+    color: #64748b;
+    margin: 0 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #1e293b;
 }
 
 .item {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background 0.2s;
 }
 
-.item img {
-    width: 64px;
+.item:hover {
+    background: rgba(56, 189, 248, 0.05);
+}
+
+.item .logo {
+    width: 52px;
+    height: 52px;
     background: #020617;
     padding: 8px;
     border-radius: 10px;
     border: 1px solid #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.item img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    background: #020617;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+    flex-shrink: 0;
 }
 
 .item p {
     margin: 0;
-    font-size: 15px;
-    line-height: 1.4;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 .highlight {
     color: #38bdf8;
+    font-size: 13px;
 }
 
 .data p {
-    margin: 8px 0;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+.data strong {
+    color: #e5e7eb;
 }
 
 .actions {
     margin-top: 20px;
     display: flex;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
@@ -97,12 +140,29 @@ body {
     border-radius: 10px;
     font-size: 14px;
     font-weight: 600;
-    color: #020617;
+    transition: opacity 0.2s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn.llamar {
     background: #38bdf8;
+    color: #020617;
 }
 
 .btn.mail {
     background: #e5e7eb;
+    color: #020617;
 }
 
 .btn.whatsapp {
@@ -112,59 +172,99 @@ body {
 
 .qr-block {
     margin-top: 24px;
-    text-align: center;
-}
-
-.qr-block img {
-    width: 120px;
-    background: #ffffff;
-    padding: 6px;
-    border-radius: 12px;
+    padding-top: 20px;
+    border-top: 1px solid #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .qr-text {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+#qrcode canvas,
+#qrcode img {
+    border-radius: 8px;
+    background: #fff;
+    padding: 6px;
+}
+
+.qr-info {
     font-size: 13px;
     color: #94a3b8;
-    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.qr-info strong {
+    color: #38bdf8;
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 600px) {
+    body { padding: 12px; }
+    .card { padding: 20px; }
+    .header h1 { font-size: 22px; }
+    .grid { grid-template-columns: 1fr; gap: 24px; }
+    .qr-block { flex-direction: column; align-items: flex-start; }
 }
 </style>
 </head>
-
 <body>
 
 <div class="card">
 
+    <!-- HEADER -->
     <div class="header">
         <h1>Víctor Garcés Borje</h1>
         <span>Energía · Gas · Mantenimiento</span>
     </div>
 
+    <!-- GRID 2 COLUMNAS -->
     <div class="grid">
 
+        <!-- COLUMNA 1: CERTIFICACIONES -->
         <div class="section">
             <h2>Certificaciones</h2>
 
             <div class="item">
-                <img src="logo-minsal.png">
+                <img src="logo-minsal.png" alt="MINSAL"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                     style="display:block">
+                <div class="logo" style="display:none">🏥</div>
                 <p>Operador de Caldera<br><span class="highlight">MINSAL</span></p>
             </div>
 
             <div class="item">
-                <img src="logo-minenergia.png">
+                <img src="logo-minenergia.png" alt="Ministerio de Energía"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                     style="display:block">
+                <div class="logo" style="display:none">⚡</div>
                 <p>Gestor Energético<br><span class="highlight">Ministerio de Energía</span></p>
             </div>
 
             <div class="item">
-                <img src="logo-sec.png">
+                <img src="logo-sec.png" alt="SEC"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                     style="display:block">
+                <div class="logo" style="display:none">🔥</div>
                 <p>Instalador de Gas Clase 3<br><span class="highlight">SEC</span></p>
             </div>
 
             <div class="item">
-                <img src="logo-finning.png">
+                <img src="logo-finning.png" alt="Finning Chile"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                     style="display:block">
+                <div class="logo" style="display:none">⚙️</div>
                 <p>Mecánico de Mantenimiento<br><span class="highlight">CAT · Finning Chile</span></p>
             </div>
         </div>
 
+        <!-- COLUMNA 2: CONTACTO -->
         <div class="section">
             <h2>Contacto</h2>
 
@@ -175,13 +275,38 @@ body {
             </div>
 
             <div class="actions">
-                <a href="tel:+56934072459" class="btn">📞 Llamar</a>
+                <a href="tel:+56934072459" class="btn llamar">📞 Llamar</a>
                 <a href="mailto:vgarcesb@gmail.com" class="btn mail">✉️ Email</a>
                 <a href="https://wa.me/56934072459" class="btn whatsapp">💬 WhatsApp</a>
+            </div>
 
-    </div>
-</div>
+            <!-- QR WHATSAPP -->
+            <div class="qr-block">
+                <div>
+                    <p class="qr-text">Escanea para contactar por WhatsApp</p>
+                    <div id="qrcode"></div>
+                </div>
+                <div class="qr-info">
+                    <strong>💬 WhatsApp directo</strong>
+                    Apunta la cámara de tu teléfono para iniciar una conversación directamente.
+                </div>
+            </div>
+
+        </div>
+    </div><!-- fin .grid -->
+
+</div><!-- fin .card -->
+
+<script>
+new QRCode(document.getElementById('qrcode'), {
+    text: 'https://wa.me/56934072459',
+    width: 110,
+    height: 110,
+    colorDark: '#020617',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.M
+});
+</script>
 
 </body>
 </html>
-
